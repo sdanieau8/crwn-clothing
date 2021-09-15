@@ -15,7 +15,7 @@ import './header.styles.scss';
 
 const Header = ({ currentUser, hidden }) => (
   <div className='header'>
-    <Link className='logo-container' to="/">
+    <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
     <div className='options'>
@@ -36,14 +36,11 @@ const Header = ({ currentUser, hidden }) => (
       )}
       <CartIcon />
     </div>
-    {
-      hidden ? null : <CartDropdown />
-    }
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
-
-const mapStateToProps = createStructuredSelector ({
+const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden
 });
